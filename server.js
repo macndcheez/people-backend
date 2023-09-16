@@ -11,6 +11,9 @@ app.use(morgan('tiny'));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send('sanity check')
+})
 app.use('/people', peopleController)
 
 app.listen(PORT, () => console.log('runnign on the port', PORT))
